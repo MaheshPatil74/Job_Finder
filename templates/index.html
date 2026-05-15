@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Job Recommender</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1><i class="fa-solid fa-briefcase"></i> AI Job Recommender</h1>
+            <p>Discover your next career move with smart recommendations</p>
+        </header>
+
+        <main>
+            <div class="glass-panel search-panel">
+                <form id="search-form">
+                    <div class="form-group full-width">
+                        <label for="skills"><i class="fa-solid fa-code"></i> Skills (comma-separated)</label>
+                        <input type="text" id="skills" placeholder="e.g., Python, React, Data Analysis" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="experience"><i class="fa-solid fa-calendar-alt"></i> Experience (Years)</label>
+                            <input type="number" id="experience" step="0.5" min="0" placeholder="e.g., 2" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="salary"><i class="fa-solid fa-money-bill-wave"></i> Expected Salary (LPA)</label>
+                            <input type="number" id="salary" step="1" min="0" placeholder="e.g., 10" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location"><i class="fa-solid fa-location-dot"></i> Location (Optional)</label>
+                            <input type="text" id="location" placeholder="e.g., Pune, Remote">
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="remote_only">
+                        <label for="remote_only">Allow remote or hybrid jobs</label>
+                    </div>
+
+                    <button type="submit" class="primary-btn" id="search-btn">
+                        <span>Find Dream Jobs</span> <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="results-container" id="results-container" style="display: none;">
+                <div class="results-header">
+                    <h2><i class="fa-solid fa-sparkles"></i> Top Matches</h2>
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="jobs">Jobs List</button>
+                        <button class="tab-btn" data-tab="insights">Analytics</button>
+                    </div>
+                </div>
+
+                <div class="tab-content active" id="jobs-tab">
+                    <div class="loading-spinner" id="loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Analyzing millions of jobs...</p>
+                    </div>
+                    <div class="jobs-list" id="jobs-list">
+                        <!-- Jobs will be injected here -->
+                    </div>
+                </div>
+
+                <div class="tab-content" id="insights-tab">
+                    <div class="charts-grid">
+                        <div class="chart-container glass-panel">
+                            <canvas id="locationChart"></canvas>
+                        </div>
+                        <div class="chart-container glass-panel">
+                            <canvas id="salaryChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
