@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Job Recommendation System (Web App Enhanced)
 
 A modern, web-based Job Recommendation System that uses `pandas` and `numpy` for intelligent matching and `Flask` with an interactive, glassmorphic UI for a stunning user experience.
@@ -41,3 +42,51 @@ If you still want to run the old desktop UI:
 ```powershell
 python job_recommender.py
 ```
+=======
+# Job Finder Mini Project
+
+This repository contains a Job Finder mini project created for Savitribai Phule Pune University (SPPU) TE Computer Engineering students.
+
+The project is based on dataset analysis and helps users find suitable job opportunities using data science concepts.
+
+## Project Features
+
+- Dataset-based job analysis
+- Job recommendation
+- Skill-based filtering
+- Data preprocessing
+- Search and matching
+- Result visualization
+
+## Technology Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Dataset analysis
+
+## Purpose
+
+This mini project is developed for academic learning and practical implementation of Data Science concepts.
+
+## University
+
+Savitribai Phule Pune University (SPPU)
+
+## Branch
+
+Third Year Engineering (TE) Computer Engineering
+
+## Note
+
+Shared for educational purposes.
+
+## Keywords
+
+SPPU Mini Project  
+SPPU Job Finder Project  
+SPPU DSBDA Mini Project  
+Dataset Based Project  
+TE Computer Engineering Project  
+>>>>>>> 172becaf80356d6ac1aabe57328e4d03d838b0be
